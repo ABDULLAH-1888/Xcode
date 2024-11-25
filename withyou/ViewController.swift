@@ -12,8 +12,8 @@ import FirebaseAuth
 class ViewController: UIViewController,UITextFieldDelegate{
     
     let loginToList = "LogintoList"
-    
-    @IBOutlet weak var emailText: UITextField!
+    @IBOutlet weak var emilText: UITextField!
+   
     @IBOutlet weak var passwordText: UITextField!
     
    
@@ -21,7 +21,7 @@ class ViewController: UIViewController,UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        emailText.delegate = self
+        emilText.delegate = self
         passwordText.delegate = self
         
         // إضافة Gesture Recognizer لإخفاء الكيبورد عند النقر على الشاشة
@@ -42,7 +42,7 @@ class ViewController: UIViewController,UITextFieldDelegate{
     }
     
     @IBAction func loginPressed(_ sender: Any) {
-        guard let email = emailText.text, !email.isEmpty,
+        guard let email = emilText.text, !email.isEmpty,
               let password = passwordText.text, !password.isEmpty else {
             showAlert(title: "خطأ", message: "يرجى ملء جميع الحقول.")
             return
@@ -99,7 +99,7 @@ class ViewController: UIViewController,UITextFieldDelegate{
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == emailText {
+        if textField == emilText {
             passwordText.becomeFirstResponder()
         } else if textField == passwordText {
             loginPressed(self) // تنفيذ تسجيل الدخول عند الضغط على "Next"
