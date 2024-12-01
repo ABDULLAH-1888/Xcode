@@ -27,6 +27,9 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var optionButton3: UIButton!
     @IBOutlet weak var optionButton4: UIButton!
     
+    @IBOutlet weak var questionNumberLabel: UILabel!
+   
+    
     let allQuestions: [QuizQuestion] = [
             QuizQuestion(
                 question: "ما هو القلق؟",
@@ -118,32 +121,48 @@ class QuizViewController: UIViewController {
     func loadQuestion() {
             let question = selectedQuestions[currentQuestionIndex]
             questionLabel.text = question.question
+        questionNumberLabel.text = "السؤال \(currentQuestionIndex + 1) من 6"
             optionButton1.setTitle(question.options[0], for: .normal)
             optionButton2.setTitle(question.options[1], for: .normal)
             optionButton3.setTitle(question.options[2], for: .normal)
             optionButton4.setTitle(question.options[3], for: .normal)
-            selectedAnswerIndex = nil
+        optionButton1.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        optionButton2.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        optionButton3.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        optionButton4.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        
+        selectedAnswerIndex = nil
         }
     @IBAction func optionSelected(_ sender: UIButton) {
             selectedAnswerIndex = sender.tag
-            checkAnswer()
+        checkAnswer(selectedButton:sender)
         }
 
 
    
-    @IBAction func nextQuestion(_ sender: Any) {
-        if currentQuestionIndex < selectedQuestions.count - 1 {
-                    currentQuestionIndex += 1
-                    loadQuestion()
-                } else {
-                    showResult()
-                }
-    }
-    func checkAnswer() {
+    func checkAnswer(selectedButton:UIButton) {
            if selectedAnswerIndex == selectedQuestions[currentQuestionIndex].correctAnswer {
                score += 1
+               selectedButton.backgroundColor = UIColor.green
+           }else {
+               selectedButton.backgroundColor = UIColor.red
+           }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            selectedButton.backgroundColor = .clear
+            self.moveToNextQuestion()
+        }
+       }
+    
+    func moveToNextQuestion() {
+           if currentQuestionIndex < selectedQuestions.count - 1 {
+               currentQuestionIndex += 1
+               loadQuestion()
+           } else {
+               showResult()
            }
        }
+    
     func showResult() {
             let alert = UIAlertController(title: "النتيجة", message: "لقد أجبت بشكل صحيح على \(score) من \(selectedQuestions.count) سؤال", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "إعادة المحاولة", style: .default, handler: { _ in
