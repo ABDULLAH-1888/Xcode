@@ -93,18 +93,80 @@
         <!--تحدياتي-->
         <scene sceneID="Y90-Ga-3id">
             <objects>
-                <viewController id="gc6-cm-Crg" sceneMemberID="viewController">
+                <viewController id="gc6-cm-Crg" customClass="MyChallengeViewController" customModule="withyou" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jh9-3A-OyM">
                         <rect key="frame" x="0.0" y="0.0" width="402" height="864"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9RX-tb-i85">
+                                <rect key="frame" x="0.0" y="37" width="402" height="394"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="394" id="p58-mi-jQq"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="hHC-NL-9XW">
+                                        <rect key="frame" x="0.0" y="50" width="402" height="47.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hHC-NL-9XW" id="h6a-bp-euF">
+                                            <rect key="frame" x="0.0" y="0.0" width="402" height="47.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBy-Lf-cd2">
+                                <rect key="frame" x="146" y="755.66666666666663" width="114" height="39.333333333333371"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39.329999999999998" id="5bt-SD-ZOh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="حفظ الوقت">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="19"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveTimeButtonTapped:" destination="gc6-cm-Crg" eventType="touchUpInside" id="7D6-6k-0Mp"/>
+                                </connections>
+                            </button>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Cwz-97-T0K">
+                                <rect key="frame" x="-9" y="688" width="245" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="OCX-OP-lbp"/>
+                                </constraints>
+                            </datePicker>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7QA-C1-NhD">
+                                <rect key="frame" x="0.0" y="0.0" width="402" height="44"/>
+                                <items>
+                                    <navigationItem title="استمتع برحلتك نحو تطوير ذاتك!" id="iv5-a3-YEB"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="r8U-Zc-RCt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9RX-tb-i85" firstAttribute="top" secondItem="r8U-Zc-RCt" secondAttribute="top" constant="37" id="45Q-Wo-fdg"/>
+                            <constraint firstItem="dBy-Lf-cd2" firstAttribute="top" secondItem="Cwz-97-T0K" secondAttribute="bottom" constant="29.670000000000002" id="FTt-X1-SFc"/>
+                            <constraint firstItem="7QA-C1-NhD" firstAttribute="trailing" secondItem="r8U-Zc-RCt" secondAttribute="trailing" id="Tl4-Ze-r20"/>
+                            <constraint firstItem="7QA-C1-NhD" firstAttribute="top" secondItem="r8U-Zc-RCt" secondAttribute="top" id="Xte-Hs-vnJ"/>
+                            <constraint firstItem="9RX-tb-i85" firstAttribute="leading" secondItem="r8U-Zc-RCt" secondAttribute="leading" id="aN6-q6-LiL"/>
+                            <constraint firstItem="7QA-C1-NhD" firstAttribute="leading" secondItem="r8U-Zc-RCt" secondAttribute="leading" id="bME-Pa-fuR"/>
+                            <constraint firstItem="Cwz-97-T0K" firstAttribute="leading" secondItem="Jh9-3A-OyM" secondAttribute="leading" constant="-9" id="dwy-aK-ppn"/>
+                            <constraint firstItem="dBy-Lf-cd2" firstAttribute="leading" secondItem="r8U-Zc-RCt" secondAttribute="leading" constant="146" id="oIK-9k-j9w"/>
+                            <constraint firstItem="9RX-tb-i85" firstAttribute="trailing" secondItem="r8U-Zc-RCt" secondAttribute="trailing" id="rGR-cU-q8P"/>
+                            <constraint firstItem="r8U-Zc-RCt" firstAttribute="trailing" secondItem="dBy-Lf-cd2" secondAttribute="trailing" constant="142" id="rTF-4j-3hz"/>
+                            <constraint firstItem="r8U-Zc-RCt" firstAttribute="trailing" secondItem="Cwz-97-T0K" secondAttribute="trailing" constant="166" id="xkY-pS-Qjd"/>
+                            <constraint firstItem="r8U-Zc-RCt" firstAttribute="bottom" secondItem="dBy-Lf-cd2" secondAttribute="bottom" constant="20" id="yEo-kJ-hck"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="تحدياتي" image="1564531_chart_business_graph_statistics_icon" id="pd6-aI-A9I"/>
+                    <connections>
+                        <outlet property="tableView" destination="9RX-tb-i85" id="BG9-jO-gun"/>
+                        <outlet property="timePicker" destination="Cwz-97-T0K" id="azb-8u-xfk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nU7-dG-yKh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4851" y="765"/>
+            <point key="canvasLocation" x="4850.746268656716" y="764.75972540045757"/>
         </scene>
         <!--Article View-->
         <scene sceneID="CLt-cN-2kN">
@@ -594,7 +656,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="N30-XZ-gko"/>
+        <segue reference="4Sp-1G-ve2"/>
         <segue reference="gKG-24-8Hj"/>
     </inferredMetricsTieBreakers>
     <resources>
