@@ -120,7 +120,7 @@
                                     <navigationItem title="المقالات" id="twj-NF-I0f">
                                         <barButtonItem key="leftBarButtonItem" title="عودة" id="V7d-pp-kYZ">
                                             <connections>
-                                                <segue destination="SU8-MH-G6C" kind="show" id="qfd-Nj-ngz"/>
+                                                <segue destination="i90-Od-e6t" kind="show" id="xQj-9o-wht"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -478,6 +478,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J68-TW-kkR" propertyAccessControl="none">
                                         <rect key="frame" x="0.0" y="58.333333333333371" width="402" height="38.333333333333343"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <accessibility key="accessibilityConfiguration" identifier="optionButton1">
                                             <accessibilityTraits key="traits" button="YES"/>
                                         </accessibility>
@@ -526,12 +527,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3BD-4V-C4V">
-                                <rect key="frame" x="0.0" y="0.0" width="402" height="115"/>
+                                <rect key="frame" x="0.0" y="0.0" width="402" height="114.66666666666667"/>
                                 <items>
                                     <navigationItem title="اختبار قصير" id="0nM-LK-Vus">
                                         <barButtonItem key="leftBarButtonItem" title="عودة" id="ssu-eX-YIN">
                                             <connections>
-                                                <segue destination="SU8-MH-G6C" kind="show" id="8XE-3c-yOO"/>
+                                                <segue destination="i90-Od-e6t" kind="show" id="N30-XZ-gko"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -568,7 +569,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ji-LV-TuE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5619.4029850746265" y="-685.12585812356974"/>
+            <point key="canvasLocation" x="5642" y="-648"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="295-C7-pSu">
@@ -593,7 +594,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aij-ga-4by"/>
+        <segue reference="N30-XZ-gko"/>
         <segue reference="gKG-24-8Hj"/>
     </inferredMetricsTieBreakers>
     <resources>
